@@ -1,0 +1,44 @@
+{
+  "name": "jrnl.cc",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate",
+    "lint:js": "eslint --ext \".js,.vue\" --ignore-path .gitignore .",
+    "lint": "yarn lint:js"
+  },
+  "lint-staged": {
+    "*.{js,vue}": "eslint"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "pre-commit": "lint-staged"
+    }
+  },
+  "dependencies": {
+    "@directus/sdk": "^9.0.0-rc.76",
+    "core-js": "^3.9.1",
+    "date-fns": "^2.22.1",
+    "marked": "^2.1.1",
+    "nuxt": "^2.15.3",
+    "typograf": "^6.12.1"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^12.0.1",
+    "@commitlint/config-conventional": "^12.0.1",
+    "@nuxtjs/eslint-config": "^6.0.0",
+    "@nuxtjs/eslint-module": "^3.0.2",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.22.0",
+    "eslint-plugin-nuxt": "^2.0.0",
+    "eslint-plugin-vue": "^7.7.0",
+    "husky": "^4.3.8",
+    "less": "^4.1.1",
+    "less-loader": "^7.3.0",
+    "lint-staged": "^10.5.4"
+  }
+}
