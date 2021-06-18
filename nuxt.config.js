@@ -51,10 +51,6 @@ export default {
     injectScripts: false
   },
 
-  router: {
-    base: '/jrnl.cc/'
-  },
-
   publicRuntimeConfig: {
     apiUrl: process.env.DIRECTUS_URL,
     apiKey: process.env.DIRECTUS_KEY
