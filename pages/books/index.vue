@@ -9,6 +9,8 @@
     >
       <div class="book__cover">
         <img
+          class="book__coverImage"
+          :data-blur="book.blur"
           :src="`https://data.jrnl.cc/assets/${book.cover}?width=150&height=200&fit=cover`"
           :alt="`Обложка ${book.title}`"
         >
@@ -86,12 +88,20 @@ export default {
   align-items: start;
   gap: 24px;
 
+  &:nth-child(n + 2) {
+    margin-top: 2rem;
+  }
+
   &__cover {
     position: relative;
     display: flex;
 
     border-radius: 6px;
     overflow: hidden;
+  }
+
+  &__coverImage[data-blur="true"] {
+    filter: blur(20px);
   }
 
   &__badge {
