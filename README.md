@@ -1,5 +1,7 @@
 # jrnl.cc
 
+[![Build Static](https://github.com/yaruson/jrnl.cc/actions/workflows/cd.yml/badge.svg)](https://github.com/yaruson/jrnl.cc/actions/workflows/cd.yml)
+
 ## Build Setup
 
 ```bash
