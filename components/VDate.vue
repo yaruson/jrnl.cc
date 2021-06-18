@@ -11,8 +11,8 @@ export default {
   computed: {
     humanReadable () {
       const dt = new Date(this.datetime)
-      const ds = dt.toLocaleDateString([], { year: 'numeric', month: 'long', day: 'numeric' })
-      const ts = dt.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
+      const ds = dt.toLocaleDateString('ru', { year: 'numeric', month: 'long', day: 'numeric' })
+      const ts = dt.toLocaleTimeString('ru', { hour: '2-digit', minute: '2-digit' })
 
       return `${ds} в&nbsp;${ts}`
     }
