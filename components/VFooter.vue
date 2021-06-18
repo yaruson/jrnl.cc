@@ -3,7 +3,7 @@
     Все материалы сайта, если не&nbsp;указано иное, доступны по&nbsp;лицензии
     <a
       href="https://creativecommons.org/licenses/by-sa/4.0/"
-      rel="external license"
+      rel="external license noopener"
       target="_blank"
     >
       Creative&nbsp;Commons Attribution
@@ -11,7 +11,7 @@
     </a>
 
     <aside>
-      <img src="~/assets/by-sa.svg" alt="Логотип CC-BY-SA">
+      <img src="~/assets/by-sa.svg" alt="Логотип CC-BY-SA" width="80" height="15">
     </aside>
   </footer>
 </template>

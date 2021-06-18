@@ -1,0 +1,7 @@
+mark > a {
+  color: #0071ca;
+}
+
+nav li:nth-child(n + 2) {
+  margin-top: 0.5rem;
+}
