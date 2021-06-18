@@ -1,0 +1,1 @@
+window.__NUXT__=(function(a){return {staticAssetsBase:"\u002Fjrnl.cc\u002F_nuxt\u002Fstatic\u002F1624020310",layout:"default",error:a,serverRendered:true,routePath:"\u002Fbooks",config:{apiUrl:"https:\u002F\u002Fdata.jrnl.cc\u002F",apiKey:"5ekCH9Y8jO9gcpst-BJ1HT9ewzQF3KaWzqsW",_app:{basePath:"\u002Fjrnl.cc\u002F",assetsPath:"\u002Fjrnl.cc\u002F_nuxt\u002F",cdnURL:a}}}}(null));
