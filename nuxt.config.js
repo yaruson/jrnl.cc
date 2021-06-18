@@ -15,6 +15,13 @@ export default {
     ],
     link: [
       { rel: 'stylesheet', href: 'https://cdn.jsdelivr.net/npm/water.css@2/out/water.min.css' }
+    ],
+    script: [
+      {
+        src: 'https://gc.zgo.at/count.js',
+        async: true,
+        'data-goatcounter': 'https://jrnl.goatcounter.com/count'
+      }
     ]
   },
 
