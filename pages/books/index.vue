@@ -22,14 +22,16 @@
         </VBadge>
       </div>
 
-      <div>
-        <hgroup class="book__header">
+      <div class="book__title">
+        <hgroup>
           <h2 v-html="$typograf(book.title)" />
           <h3 v-html="$typograf(book.subtitle)" />
         </hgroup>
 
         <cite>{{ book.author }}</cite>
+      </div>
 
+      <div class="book__info">
         <ul>
           <li>Добавлена <VDate :datetime="book.date_created" /></li>
           <li>
@@ -92,17 +94,38 @@ export default {
 <style lang="less" scoped>
 .book {
   display: grid;
-  grid-template-columns: 150px 1fr;
-  align-items: start;
   gap: 24px;
+
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "cover"
+    "title"
+    "info";
+
+  @media (min-width: 360px) {
+    grid-template-columns: 150px auto;
+    grid-template-areas:
+      "cover title"
+      "info info";
+  }
+
+  @media (min-width: 520px) {
+    grid-template-areas:
+      "cover title"
+      "cover info";
+  }
 
   &:nth-child(n + 2) {
     margin-top: 2rem;
   }
 
   &__cover {
+    grid-area: cover;
+    justify-self: center;
+
     position: relative;
     display: flex;
+    flex-shrink: 0;
 
     border-radius: 6px;
     overflow: hidden;
@@ -114,6 +137,18 @@ export default {
 
     &[data-blur="true"] {
       filter: blur(20px);
+    }
+  }
+
+  &__title {
+    grid-area: title;
+  }
+
+  &__info {
+    grid-area: info;
+
+    & > ul {
+      margin: 0;
     }
   }
 
