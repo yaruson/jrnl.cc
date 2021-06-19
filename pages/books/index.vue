@@ -11,7 +11,10 @@
         <img
           class="book__coverImage"
           :data-blur="book.blur"
-          :src="`https://data.jrnl.cc/assets/${book.cover}?width=150&height=200&fit=cover`"
+          :src="
+            book.hotlink ||
+              `https://data.jrnl.cc/assets/${book.cover}?width=150&height=200&fit=cover`
+          "
           :alt="`Обложка ${book.title}`"
         >
         <VBadge :color="badgeColors[book.status]" class="book__badge">
@@ -31,6 +34,11 @@
           <li>Добавлена <VDate :datetime="book.date_created" /></li>
           <li>
             Прочитано {{ book.pages_read }} из&nbsp;{{ book.pages_total }}
+          </li>
+          <li v-if="book.link">
+            <a :href="book.link" rel="noopener" target="_blank">
+              Страница книги на&nbsp;сайте издательства
+            </a>
           </li>
         </ul>
 
@@ -84,7 +92,7 @@ export default {
 <style lang="less" scoped>
 .book {
   display: grid;
-  grid-template-columns: auto 1fr;
+  grid-template-columns: 150px 1fr;
   align-items: start;
   gap: 24px;
 
@@ -100,8 +108,13 @@ export default {
     overflow: hidden;
   }
 
-  &__coverImage[data-blur="true"] {
-    filter: blur(20px);
+  &__coverImage {
+    height: 200px;
+    width: 150px;
+
+    &[data-blur="true"] {
+      filter: blur(20px);
+    }
   }
 
   &__badge {
