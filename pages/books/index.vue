@@ -11,10 +11,7 @@
         <img
           class="book__coverImage"
           :data-blur="book.blur"
-          :src="
-            book.hotlink ||
-              `https://data.jrnl.cc/assets/${book.cover}?width=150&height=200&fit=cover`
-          "
+          :src="`https://data.jrnl.cc/assets/${book.cover}?width=150&height=200&fit=cover`"
           :alt="`Обложка ${book.title}`"
         >
         <VBadge :color="badgeColors[book.status]" class="book__badge">
@@ -37,10 +34,13 @@
           <li>
             Прочитано {{ book.pages_read }} из&nbsp;{{ book.pages_total }}
           </li>
-          <li v-if="book.link">
-            <a :href="book.link" rel="noopener" target="_blank">
-              Страница книги на&nbsp;сайте издательства
+          <li>
+            <a v-if="book.link" :href="book.link" rel="noopener" target="_blank">
+              &laquo;{{ book.title }}&raquo; на&nbsp;сайте издательства {{ book.publisher }}
             </a>
+            <template v-else>
+              Издательство &mdash;&nbsp;{{ book.publisher }}
+            </template>
           </li>
         </ul>
 
