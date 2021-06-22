@@ -21,7 +21,7 @@
     }
   },
   "dependencies": {
-    "@directus/sdk": "^9.0.0-rc.76",
+    "@directus/sdk": "^9.0.0-rc.78",
     "core-js": "^3.9.1",
     "date-fns": "^2.22.1",
     "marked": "^2.1.1",
