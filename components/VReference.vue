@@ -4,7 +4,7 @@
     v-if="collection === 'books'"
     :to="{
       path: '/books',
-      hash: '#book-' + item.id
+      hash: '#book-' + item.id,
     }"
     class="reference_book"
     v-html="`${item.title} &mdash;&nbsp;${item.author}`"
@@ -24,13 +24,11 @@ export default {
 }
 </script>
 
-<style lang="less" scoped>
-.reference {
-  &_book::before {
-    display: inline-block;
-    content: "📚";
-    margin-right: 0.5rem;
-    text-decoration: none;
-  }
+<style scoped>
+.reference_book::before {
+  display: inline-block;
+  content: "📚";
+  margin-right: 0.5rem;
+  text-decoration: none;
 }
 </style>

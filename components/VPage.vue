@@ -47,7 +47,7 @@ export default {
 }
 </script>
 
-<style lang="less" scoped>
+<style scoped>
 header aside {
   display: inline;
   opacity: 0.5;
