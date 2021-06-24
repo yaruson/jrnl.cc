@@ -31,7 +31,7 @@
       <div class="book__info">
         <ul>
           <li>Добавлена <VDate :datetime="book.date_created" /></li>
-          <li>
+          <li v-if="showPageCount[book.status]">
             Прочитано {{ book.pages_read }} из&nbsp;{{ book.pages_total }}
           </li>
           <li>
@@ -76,6 +76,12 @@ export default {
         in_progress: 'Читаю',
         read: 'Прочитал',
         abandoned: 'Забросил'
+      },
+      showPageCount: {
+        backlog: false,
+        in_progress: true,
+        read: false,
+        abandoned: true
       }
     }
   },
