@@ -1,12 +1,13 @@
 <template>
   <VPage header="Заметки">
     <article v-for="(note, i) in notes" :key="`note-${i}`">
-      <footer>
-        Опубликовано <VDate :datetime="note.date_created" />
-      </footer>
+      <footer>Опубликовано <VDate :datetime="note.date_created" /></footer>
 
       <VMarkdown :source="note.content" />
-      <VReferences v-if="note.reference.length > 0" :references="note.reference" />
+      <VReferences
+        v-if="note.reference.length > 0"
+        :references="note.reference"
+      />
     </article>
   </VPage>
 </template>
@@ -17,10 +18,15 @@ export default {
     return { notes: [] }
   },
   async fetch () {
-    this.notes = (await this.$directus.items('notes').readMany({
-      fields: '*.collection,*.item.*',
-      sort: '-date_created'
-    }))?.data
+    this.notes = (
+      await this.$directus.items('notes').readMany({
+        fields: '*.collection,*.item.*',
+        sort: '-date_created',
+        filter: {
+          status: { _eq: 'published' }
+        }
+      })
+    )?.data
   }
 }
 </script>
