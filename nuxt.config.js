@@ -55,7 +55,7 @@ export default {
   },
 
   render: {
-    injectScripts: false
+    injectScripts: process.env.NODE_ENV !== 'production'
   },
 
   publicRuntimeConfig: {
