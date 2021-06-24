@@ -16,7 +16,7 @@
   </footer>
 </template>
 
-<style lang="less" scoped>
+<style scoped>
 aside {
   margin-top: 1rem;
 

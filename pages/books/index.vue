@@ -35,8 +35,14 @@
             Прочитано {{ book.pages_read }} из&nbsp;{{ book.pages_total }}
           </li>
           <li>
-            <a v-if="book.link" :href="book.link" rel="noopener" target="_blank">
-              &laquo;{{ book.title }}&raquo; на&nbsp;сайте издательства {{ book.publisher }}
+            <a
+              v-if="book.link"
+              :href="book.link"
+              rel="noopener"
+              target="_blank"
+            >
+              &laquo;{{ book.title }}&raquo; на&nbsp;сайте издательства
+              {{ book.publisher }}
             </a>
             <template v-else>
               Издательство &mdash;&nbsp;{{ book.publisher }}
@@ -91,83 +97,72 @@ export default {
 }
 </script>
 
-<style lang="less" scoped>
+<style scoped>
 .book {
   display: grid;
   gap: 24px;
-
   grid-template-columns: 1fr;
-  grid-template-areas:
-    "cover"
-    "title"
-    "info";
+  grid-template-areas: "cover" "title" "info";
+}
 
-  @media (min-width: 360px) {
+@media (min-width: 360px) {
+  .book {
     grid-template-columns: 150px auto;
-    grid-template-areas:
-      "cover title"
-      "info info";
-  }
-
-  @media (min-width: 520px) {
-    grid-template-areas:
-      "cover title"
-      "cover info";
-  }
-
-  &:nth-child(n + 2) {
-    margin-top: 2rem;
-  }
-
-  &__cover {
-    grid-area: cover;
-    justify-self: center;
-
-    position: relative;
-    display: flex;
-    flex-shrink: 0;
-
-    border-radius: 6px;
-    overflow: hidden;
-  }
-
-  &__coverImage {
-    height: 200px;
-    width: 150px;
-
-    &[data-blur="true"] {
-      filter: blur(20px);
-    }
-  }
-
-  &__title {
-    grid-area: title;
-  }
-
-  &__info {
-    grid-area: info;
-
-    & > ul {
-      margin: 0;
-    }
-  }
-
-  &__badge {
-    position: absolute;
-
-    top: 10px;
-    left: 10px;
-
-    box-shadow: 2px 2px 3px rgba(#000, 0.5);
+    grid-template-areas: "cover title" "info info";
   }
 }
 
-hgroup {
-  & h2 {
-    margin: 0;
+@media (min-width: 520px) {
+  .book {
+    grid-template-areas: "cover title" "cover info";
   }
-  & h3 {
-    margin-top: 0;
-  }
+}
+
+.book:nth-child(n + 2) {
+  margin-top: 2rem;
+}
+
+.book__cover {
+  grid-area: cover;
+  justify-self: center;
+  position: relative;
+  display: flex;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.book__coverImage {
+  height: 200px;
+  width: 150px;
+  border-radius: 6px;
+}
+
+.book__coverImage[data-blur="true"] {
+  filter: blur(20px);
+}
+
+.book__title {
+  grid-area: title;
+}
+
+.book__info {
+  grid-area: info;
+}
+
+.book__info > ul {
+  margin: 0;
+}
+
+.book__badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5);
+}
+hgroup h2 {
+  margin: 0;
+}
+hgroup h3 {
+  margin-top: 0;
 }
 </style>
