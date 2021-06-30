@@ -1061,10 +1061,10 @@
   resolved "https://registry.yarnpkg.com/@csstools/convert-colors/-/convert-colors-1.4.0.tgz#ad495dc41b12e75d588c6db8b9834f08fa131eb7"
   integrity sha512-5a6wqoJV/xEdbRNKVo6I4hO3VjyDq//8q2f9I6PBAvMesJHFauXDorcNCsr9RzvsZnaWi5NYCcfyqP1QeFHFbw==
 
-"@directus/sdk@^9.0.0-rc.76":
-  version "9.0.0-rc.76"
-  resolved "https://registry.yarnpkg.com/@directus/sdk/-/sdk-9.0.0-rc.76.tgz#aa16f41f614096f640102c20b97ee15094da9915"
-  integrity sha512-lTJJWJKtIj9MoZGkUmNR5BkU0EmZffrp2zJCGXuO9oIQXhtK0IAbdTGyNIcp4x9qPTooBxTf+6AffASApaA+5Q==
+"@directus/sdk@^9.0.0-rc.83":
+  version "9.0.0-rc.83"
+  resolved "https://registry.yarnpkg.com/@directus/sdk/-/sdk-9.0.0-rc.83.tgz#cd448ca401e766e8538ce0e7a14fa3dcf759e660"
+  integrity sha512-i6Cnnt97BjhN2+wq0Zk58FuTAw+18qszCd13Qn5oCzp/oI8UNB4q0DJn2DPvrwvT5VztQ22X5RWO/GmHkq9c2w==
   dependencies:
     axios "^0.21.1"
 
@@ -4771,7 +4771,7 @@ human-signals@^2.1.0:
   resolved "https://registry.yarnpkg.com/human-signals/-/human-signals-2.1.0.tgz#dc91fcba42e4d06e4abaed33b3e7a3c02f514ea0"
   integrity sha512-B4FFZ6q/T2jhhksgkbEW3HBvWIfDW85snkQgawt07S7J5QXTk6BkNV+0yAeZrM5QpMAdYlocGoljn0sJ/WQkFw==
 
-husky@6:
+husky@^6.0.0:
   version "6.0.0"
   resolved "https://registry.yarnpkg.com/husky/-/husky-6.0.0.tgz#810f11869adf51604c32ea577edbc377d7f9319e"
   integrity sha512-SQS2gDTB7tBN486QSoKPKQItZw97BMOd+Kdb6ghfpBc0yXyzrddI0oDV5MkDAbuB4X2mO3/nj60TRMcYxwzZeQ==
